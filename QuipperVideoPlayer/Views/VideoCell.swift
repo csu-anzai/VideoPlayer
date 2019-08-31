@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Cartography
 
 class VideoCell: UICollectionViewCell {
     
@@ -46,6 +47,7 @@ class VideoCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -61,9 +63,30 @@ class VideoCell: UICollectionViewCell {
         contentView.addSubview(thumbnailImageView)
         contentView.addSubview(titleLabel)
         contentView.addSubview(presenterNameLabel)
-        
+        setUpConstraints()
+    }
+    
+    private func setUpConstraints() {
         // constraints
-        // TODO: Setup constraints
+        constrain(contentView, thumbnailImageView, titleLabel, presenterNameLabel) { (contentView, thumbnailImageView, titleLabel, presenterNameLabel) in
+            // thumbnail
+            thumbnailImageView.top == contentView.top
+            thumbnailImageView.leading == contentView.leading
+            thumbnailImageView.trailing == contentView.trailing
+            thumbnailImageView.height == thumbnailImageView.width * 9/16 // aspect ratio
+            
+            // title
+            let sidePadding: CGFloat = 16.0
+            titleLabel.top == thumbnailImageView.bottom + 8.0
+            titleLabel.leading == contentView.leading + sidePadding
+            titleLabel.trailing == contentView.trailing - sidePadding
+            
+            // presenter name
+            align(leading: titleLabel, presenterNameLabel)
+            align(trailing: titleLabel, presenterNameLabel)
+            presenterNameLabel.top == titleLabel.bottom + 4.0
+            presenterNameLabel.bottom == contentView.bottom
+        }
     }
     
     //
