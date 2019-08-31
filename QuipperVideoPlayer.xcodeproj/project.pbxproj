@@ -14,6 +14,7 @@
 		603D9EC3231A4B1800240DD5 /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9EC0231A4B1800240DD5 /* ServiceProtocol.swift */; };
 		603D9EC4231A4B1800240DD5 /* URLRequest+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9EC1231A4B1800240DD5 /* URLRequest+Additions.swift */; };
 		603D9EC5231A4B1800240DD5 /* URLSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9EC2231A4B1800240DD5 /* URLSessionProvider.swift */; };
+		603D9EC8231A4D4100240DD5 /* VideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9EC7231A4D4100240DD5 /* VideoInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		603D9EC0231A4B1800240DD5 /* ServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceProtocol.swift; sourceTree = "<group>"; };
 		603D9EC1231A4B1800240DD5 /* URLRequest+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+Additions.swift"; sourceTree = "<group>"; };
 		603D9EC2231A4B1800240DD5 /* URLSessionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionProvider.swift; sourceTree = "<group>"; };
+		603D9EC7231A4D4100240DD5 /* VideoInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				602B84D62316867100B36FBF /* AppDelegate.swift */,
 				602B84D82316867100B36FBF /* VideoListViewController.swift */,
 				603D9EBF231A4B1800240DD5 /* Network Layer */,
+				603D9EC6231A4D4100240DD5 /* Model */,
 				602B84DD2316867200B36FBF /* Assets.xcassets */,
 				602B84DF2316867200B36FBF /* LaunchScreen.storyboard */,
 				602B84E22316867200B36FBF /* Info.plist */,
@@ -76,6 +79,14 @@
 				603D9EC2231A4B1800240DD5 /* URLSessionProvider.swift */,
 			);
 			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		603D9EC6231A4D4100240DD5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				603D9EC7231A4D4100240DD5 /* VideoInfo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +162,7 @@
 				603D9EC3231A4B1800240DD5 /* ServiceProtocol.swift in Sources */,
 				603D9EC5231A4B1800240DD5 /* URLSessionProvider.swift in Sources */,
 				602B84D92316867100B36FBF /* VideoListViewController.swift in Sources */,
+				603D9EC8231A4D4100240DD5 /* VideoInfo.swift in Sources */,
 				602B84D72316867100B36FBF /* AppDelegate.swift in Sources */,
 				603D9EC4231A4B1800240DD5 /* URLRequest+Additions.swift in Sources */,
 			);
