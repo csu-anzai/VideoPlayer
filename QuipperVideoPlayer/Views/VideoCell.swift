@@ -41,6 +41,7 @@ class VideoCell: UICollectionViewCell {
     private let thumbnailImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         imageView.accessibilityIdentifier = "Video thumbnail"
         return imageView
     }()
