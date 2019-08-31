@@ -92,7 +92,7 @@ class VideoCell: UICollectionViewCell {
             align(leading: titleLabel, presenterNameLabel)
             align(trailing: titleLabel, presenterNameLabel)
             presenterNameLabel.top == titleLabel.bottom + 4.0
-            presenterNameLabel.bottom == contentView.bottom
+            presenterNameLabel.bottom == contentView.bottom - 8.0
         }
     }
     
