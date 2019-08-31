@@ -10,7 +10,12 @@ import Foundation
 
 extension URLComponents {
     init(service: ServiceProtocol) {
-        let url = service.baseURL.appendingPathComponent(service.path)
+        let url: URL
+        if service.path.isEmpty {
+            url = service.baseURL
+        } else {
+            url = service.baseURL.appendingPathComponent(service.path)
+        }
         self.init(url: url, resolvingAgainstBaseURL: false)! // Allow crashes here to catch setup problems asap.
         
         guard service.parametersEncoding == .url, !service.parameters.isEmpty else {
