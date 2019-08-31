@@ -22,9 +22,7 @@ class QuipperService: ServiceProtocol {
     /// HTTP request method.
     ///
     /// Defualt is GET.
-    var method: HTTPRequestMethod {
-        return .get
-    }
+    var method: HTTPRequestMethod = .get
     
     var headers: Headers = [:]
     
