@@ -19,6 +19,8 @@
 		603D9ECE231A648800240DD5 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9ECD231A648800240DD5 /* Colors.swift */; };
 		603D9ED1231A7B6F00240DD5 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 603D9ED0231A7B6F00240DD5 /* Cartography.framework */; };
 		603D9ED7231A973500240DD5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9ED6231A973500240DD5 /* Coordinator.swift */; };
+		603D9EDE231AC5F700240DD5 /* QuipperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9EDD231AC5F700240DD5 /* QuipperService.swift */; };
+		603D9EE0231AC60F00240DD5 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9EDF231AC60F00240DD5 /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		603D9ECD231A648800240DD5 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		603D9ED0231A7B6F00240DD5 /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
 		603D9ED6231A973500240DD5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		603D9EDD231AC5F700240DD5 /* QuipperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuipperService.swift; sourceTree = "<group>"; };
+		603D9EDF231AC60F00240DD5 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 		603D9EBF231A4B1800240DD5 /* Network Layer */ = {
 			isa = PBXGroup;
 			children = (
+				603D9EDC231AC5DB00240DD5 /* Services */,
 				603D9EC0231A4B1800240DD5 /* ServiceProtocol.swift */,
 				603D9EC1231A4B1800240DD5 /* URLRequest+Additions.swift */,
 				603D9EC2231A4B1800240DD5 /* URLSessionProvider.swift */,
@@ -124,6 +129,15 @@
 				603D9ED0231A7B6F00240DD5 /* Cartography.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		603D9EDC231AC5DB00240DD5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				603D9EDD231AC5F700240DD5 /* QuipperService.swift */,
+				603D9EDF231AC60F00240DD5 /* DataService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,7 +237,9 @@
 				603D9EC3231A4B1800240DD5 /* ServiceProtocol.swift in Sources */,
 				603D9ECE231A648800240DD5 /* Colors.swift in Sources */,
 				603D9ED7231A973500240DD5 /* Coordinator.swift in Sources */,
+				603D9EE0231AC60F00240DD5 /* DataService.swift in Sources */,
 				603D9ECB231A62CA00240DD5 /* VideoCell.swift in Sources */,
+				603D9EDE231AC5F700240DD5 /* QuipperService.swift in Sources */,
 				603D9EC5231A4B1800240DD5 /* URLSessionProvider.swift in Sources */,
 				602B84D92316867100B36FBF /* VideoListViewController.swift in Sources */,
 				603D9EC8231A4D4100240DD5 /* VideoInfo.swift in Sources */,
