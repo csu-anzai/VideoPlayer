@@ -121,4 +121,13 @@ class VideoCell: UICollectionViewCell {
         thumbnailImageView.image = thumbnailImage
     }
     
+    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+        let layoutAttributes = super.preferredLayoutAttributesFitting(layoutAttributes)
+        // Ensure we keep preferred width as is, while adjusting the height to be dynamic.
+        layoutAttributes.bounds.size = systemLayoutSizeFitting(UIView.layoutFittingCompressedSize,
+                                                               withHorizontalFittingPriority: .required,
+                                                               verticalFittingPriority: .defaultLow)
+        return layoutAttributes
+    }
+    
 }
