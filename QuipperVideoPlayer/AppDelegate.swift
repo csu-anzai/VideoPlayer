@@ -12,6 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    private var coordinator: Coordinator?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -23,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupInitialViewController() {
         // setup initial view controller
         let vc = VideoListViewController()
+        // setup main coordinator
+        coordinator = Coordinator(rootViewController: vc)
+        vc.delegate = coordinator
         // setup main window
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = vc
