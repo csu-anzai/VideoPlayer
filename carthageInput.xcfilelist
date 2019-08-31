@@ -1,1 +1,2 @@
 $(SRCROOT)/Carthage/Build/iOS/Cartography.framework
+$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework

@@ -19,6 +19,11 @@
 		603D9ECE231A648800240DD5 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9ECD231A648800240DD5 /* Colors.swift */; };
 		603D9ED1231A7B6F00240DD5 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 603D9ED0231A7B6F00240DD5 /* Cartography.framework */; };
 		603D9ED7231A973500240DD5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9ED6231A973500240DD5 /* Coordinator.swift */; };
+		603D9EDE231AC5F700240DD5 /* QuipperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9EDD231AC5F700240DD5 /* QuipperService.swift */; };
+		603D9EE0231AC60F00240DD5 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9EDF231AC60F00240DD5 /* DataService.swift */; };
+		603D9EE2231AC91100240DD5 /* VideoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9EE1231AC91100240DD5 /* VideoListViewModel.swift */; };
+		603D9EE6231ACF1A00240DD5 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 603D9EE5231ACF1A00240DD5 /* SDWebImage.framework */; };
+		603D9EE9231AD2DC00240DD5 /* TopAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9EE8231AD2DC00240DD5 /* TopAlignedCollectionViewFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +41,11 @@
 		603D9ECD231A648800240DD5 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		603D9ED0231A7B6F00240DD5 /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
 		603D9ED6231A973500240DD5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		603D9EDD231AC5F700240DD5 /* QuipperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuipperService.swift; sourceTree = "<group>"; };
+		603D9EDF231AC60F00240DD5 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		603D9EE1231AC91100240DD5 /* VideoListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoListViewModel.swift; sourceTree = "<group>"; };
+		603D9EE5231ACF1A00240DD5 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
+		603D9EE8231AD2DC00240DD5 /* TopAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +54,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				603D9ED1231A7B6F00240DD5 /* Cartography.framework in Frameworks */,
+				603D9EE6231ACF1A00240DD5 /* SDWebImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +84,9 @@
 				602B84D62316867100B36FBF /* AppDelegate.swift */,
 				603D9ED6231A973500240DD5 /* Coordinator.swift */,
 				602B84D82316867100B36FBF /* VideoListViewController.swift */,
+				603D9EE1231AC91100240DD5 /* VideoListViewModel.swift */,
 				603D9EC9231A62B900240DD5 /* Views */,
+				603D9EE7231AD2DC00240DD5 /* Helpers */,
 				603D9EBF231A4B1800240DD5 /* Network Layer */,
 				603D9EC6231A4D4100240DD5 /* Model */,
 				603D9ECC231A647600240DD5 /* DesignSystem */,
@@ -87,6 +100,7 @@
 		603D9EBF231A4B1800240DD5 /* Network Layer */ = {
 			isa = PBXGroup;
 			children = (
+				603D9EDC231AC5DB00240DD5 /* Services */,
 				603D9EC0231A4B1800240DD5 /* ServiceProtocol.swift */,
 				603D9EC1231A4B1800240DD5 /* URLRequest+Additions.swift */,
 				603D9EC2231A4B1800240DD5 /* URLSessionProvider.swift */,
@@ -121,9 +135,27 @@
 		603D9ECF231A7B6F00240DD5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				603D9EE5231ACF1A00240DD5 /* SDWebImage.framework */,
 				603D9ED0231A7B6F00240DD5 /* Cartography.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		603D9EDC231AC5DB00240DD5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				603D9EDD231AC5F700240DD5 /* QuipperService.swift */,
+				603D9EDF231AC60F00240DD5 /* DataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		603D9EE7231AD2DC00240DD5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				603D9EE8231AD2DC00240DD5 /* TopAlignedCollectionViewFlowLayout.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,11 +254,15 @@
 			files = (
 				603D9EC3231A4B1800240DD5 /* ServiceProtocol.swift in Sources */,
 				603D9ECE231A648800240DD5 /* Colors.swift in Sources */,
+				603D9EE2231AC91100240DD5 /* VideoListViewModel.swift in Sources */,
 				603D9ED7231A973500240DD5 /* Coordinator.swift in Sources */,
+				603D9EE0231AC60F00240DD5 /* DataService.swift in Sources */,
 				603D9ECB231A62CA00240DD5 /* VideoCell.swift in Sources */,
+				603D9EDE231AC5F700240DD5 /* QuipperService.swift in Sources */,
 				603D9EC5231A4B1800240DD5 /* URLSessionProvider.swift in Sources */,
 				602B84D92316867100B36FBF /* VideoListViewController.swift in Sources */,
 				603D9EC8231A4D4100240DD5 /* VideoInfo.swift in Sources */,
+				603D9EE9231AD2DC00240DD5 /* TopAlignedCollectionViewFlowLayout.swift in Sources */,
 				602B84D72316867100B36FBF /* AppDelegate.swift in Sources */,
 				603D9EC4231A4B1800240DD5 /* URLRequest+Additions.swift in Sources */,
 			);

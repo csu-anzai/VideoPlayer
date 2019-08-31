@@ -8,6 +8,7 @@
 
 import UIKit
 import Cartography
+import SDWebImage
 
 class VideoCell: UICollectionViewCell {
     
@@ -61,7 +62,7 @@ class VideoCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        configure(title: "", presenterName: "", thumbnailImage: nil)
+        configure(title: "", presenterName: "", thumbnailImageURL: nil)
     }
     
     private func commonInit() {
@@ -91,7 +92,7 @@ class VideoCell: UICollectionViewCell {
             align(leading: titleLabel, presenterNameLabel)
             align(trailing: titleLabel, presenterNameLabel)
             presenterNameLabel.top == titleLabel.bottom + 4.0
-            presenterNameLabel.bottom == contentView.bottom
+            presenterNameLabel.bottom == contentView.bottom - 8.0
         }
     }
     
@@ -105,14 +106,10 @@ class VideoCell: UICollectionViewCell {
     ///   - title: Title of the video.
     ///   - presenterName: Video presenter name.
     ///   - thumbnailImage: thumbnail image of the video. If this is nil then
-    func configure(title: String, presenterName: String, thumbnailImage: UIImage?) {
+    func configure(title: String, presenterName: String, thumbnailImageURL url: URL?) {
         titleLabel.text = title
         presenterNameLabel.text = presenterName
-        if let image = thumbnailImage {
-            thumbnailImageView.image = image
-        } else { // use placeholder. Or, maybe loading indicator?
-            thumbnailImageView.image = nil // placeholder
-        }
+        thumbnailImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "nilImage")) // TODO: Add placeholder image.
     }
     
     /// Update the thumbnail image.
