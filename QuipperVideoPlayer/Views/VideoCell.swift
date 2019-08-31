@@ -64,6 +64,7 @@ class VideoCell: UICollectionViewCell {
     }
     
     private func commonInit() {
+        backgroundColor = .white
         contentView.addSubview(thumbnailImageView)
         contentView.addSubview(titleLabel)
         contentView.addSubview(presenterNameLabel)
