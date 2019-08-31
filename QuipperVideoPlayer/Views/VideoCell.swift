@@ -19,6 +19,8 @@ class VideoCell: UICollectionViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 18)
+        label.numberOfLines = 3
+        label.lineBreakMode = .byTruncatingTail
         label.textColor = .primaryTitleColor
         label.accessibilityIdentifier = "Title label"
         return label
@@ -28,6 +30,8 @@ class VideoCell: UICollectionViewCell {
     private let presenterNameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 15)
+        label.numberOfLines = 1
+        label.lineBreakMode = .byTruncatingTail
         label.textColor = .secondaryTitleColor
         label.accessibilityIdentifier = "Presenter name"
         return label
