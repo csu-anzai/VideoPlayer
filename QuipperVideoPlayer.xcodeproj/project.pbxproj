@@ -21,6 +21,7 @@
 		603D9ED7231A973500240DD5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9ED6231A973500240DD5 /* Coordinator.swift */; };
 		603D9EDE231AC5F700240DD5 /* QuipperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9EDD231AC5F700240DD5 /* QuipperService.swift */; };
 		603D9EE0231AC60F00240DD5 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9EDF231AC60F00240DD5 /* DataService.swift */; };
+		603D9EE2231AC91100240DD5 /* VideoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9EE1231AC91100240DD5 /* VideoListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		603D9ED6231A973500240DD5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		603D9EDD231AC5F700240DD5 /* QuipperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuipperService.swift; sourceTree = "<group>"; };
 		603D9EDF231AC60F00240DD5 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		603D9EE1231AC91100240DD5 /* VideoListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				602B84D62316867100B36FBF /* AppDelegate.swift */,
 				603D9ED6231A973500240DD5 /* Coordinator.swift */,
 				602B84D82316867100B36FBF /* VideoListViewController.swift */,
+				603D9EE1231AC91100240DD5 /* VideoListViewModel.swift */,
 				603D9EC9231A62B900240DD5 /* Views */,
 				603D9EBF231A4B1800240DD5 /* Network Layer */,
 				603D9EC6231A4D4100240DD5 /* Model */,
@@ -236,6 +239,7 @@
 			files = (
 				603D9EC3231A4B1800240DD5 /* ServiceProtocol.swift in Sources */,
 				603D9ECE231A648800240DD5 /* Colors.swift in Sources */,
+				603D9EE2231AC91100240DD5 /* VideoListViewModel.swift in Sources */,
 				603D9ED7231A973500240DD5 /* Coordinator.swift in Sources */,
 				603D9EE0231AC60F00240DD5 /* DataService.swift in Sources */,
 				603D9ECB231A62CA00240DD5 /* VideoCell.swift in Sources */,
