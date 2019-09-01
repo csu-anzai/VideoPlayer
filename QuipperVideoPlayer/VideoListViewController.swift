@@ -38,13 +38,14 @@ class VideoListViewController: UIViewController {
         flowLayout.estimatedItemSize = CGSize(width: view.bounds.width, height: 100)
         flowLayout.itemSize = UICollectionViewFlowLayout.automaticSize
         flowLayout.minimumLineSpacing = 16.0
+        flowLayout.headerReferenceSize = CGSize(width: view.bounds.width, height: 20)
         return UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        title = "Example Videos"
+        title = "Sample Videos"
         setUpCollectionView()
     }
     

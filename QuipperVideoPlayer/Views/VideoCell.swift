@@ -19,7 +19,7 @@ class VideoCell: UICollectionViewCell {
     /// Video title label.
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 18)
+        label.font = .boldSystemFont(ofSize: 24)
         label.numberOfLines = 3
         label.lineBreakMode = .byTruncatingTail
         label.textColor = .primaryTitleColor
@@ -30,7 +30,7 @@ class VideoCell: UICollectionViewCell {
     /// Video presenter name label.
     private let presenterNameLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 15)
+        label.font = .boldSystemFont(ofSize: 15)
         label.numberOfLines = 1
         label.lineBreakMode = .byTruncatingTail
         label.textColor = .secondaryTitleColor
@@ -72,6 +72,9 @@ class VideoCell: UICollectionViewCell {
         return view
     }()
     
+    /// The main view containing all subviews of the cell.
+    private let cardView = RoundedDropShadowView()
+    
     //
     // MARK: Lifecycle
     //
@@ -92,41 +95,41 @@ class VideoCell: UICollectionViewCell {
     
     private func commonInit() {
         backgroundColor = .white
-        contentView.addSubview(thumbnailImageView)
-        contentView.addSubview(titleLabel)
-        contentView.addSubview(presenterNameLabel)
-        contentView.addSubview(descriptionLabel)
-        contentView.addSubview(videoDurationOverlay)
+        contentView.addSubview(cardView)
+        cardView.addSubview(thumbnailImageView)
+        cardView.addSubview(titleLabel)
+        cardView.addSubview(presenterNameLabel)
+        cardView.addSubview(descriptionLabel)
+        cardView.addSubview(videoDurationOverlay)
         setUpConstraints()
     }
     
     private func setUpConstraints() {
         // constraints
-        constrain(contentView, thumbnailImageView, titleLabel, presenterNameLabel, descriptionLabel, videoDurationOverlay) { (contentView, thumbnailImageView, titleLabel, presenterNameLabel, descriptionLabel, videoDurationOverlay) in
+        constrain(contentView, cardView, thumbnailImageView, titleLabel, presenterNameLabel, descriptionLabel, videoDurationOverlay) { (contentView, cardView, thumbnailImageView, titleLabel, presenterNameLabel, descriptionLabel, videoDurationOverlay) in
+            // cardView
+            cardView.edges == contentView.edges.inseted(top: 0, leading: 16, bottom: 16, trailing: 16)
             // thumbnail
-            thumbnailImageView.top == contentView.top
-            thumbnailImageView.leading == contentView.leading
-            thumbnailImageView.trailing == contentView.trailing
+            thumbnailImageView.top == cardView.top
+            thumbnailImageView.leading == cardView.leading
+            thumbnailImageView.trailing == cardView.trailing
             thumbnailImageView.height == thumbnailImageView.width * 9/16 // aspect ratio
             
             // duration overlay
             videoDurationOverlay.bottom == thumbnailImageView.bottom - 8.0
             videoDurationOverlay.trailing == thumbnailImageView.trailing - 8.0
             
-            // title
-            let sidePadding: CGFloat = 16.0
-            titleLabel.top == thumbnailImageView.bottom + 8.0
-            titleLabel.leading == contentView.leading + sidePadding
-            titleLabel.trailing == contentView.trailing - sidePadding
-            
             // presenter name
-            align(leading: titleLabel, presenterNameLabel, descriptionLabel)
-            align(trailing: titleLabel, presenterNameLabel, descriptionLabel)
-            distribute(by: 4.0, vertically: [titleLabel, presenterNameLabel, descriptionLabel])
-            presenterNameLabel.top == titleLabel.bottom + 4.0
+            let sidePadding: CGFloat = 16.0
+            presenterNameLabel.top == thumbnailImageView.bottom + sidePadding
+            presenterNameLabel.leading == cardView.leading + sidePadding
+            presenterNameLabel.trailing == cardView.trailing - sidePadding
             
-            // video description
-            descriptionLabel.bottom == contentView.bottom - 8.0
+            // title + descrpition
+            align(leading: presenterNameLabel, titleLabel, descriptionLabel)
+            align(trailing: presenterNameLabel, titleLabel, descriptionLabel)
+            distribute(by: 4.0, vertically: [presenterNameLabel, titleLabel, descriptionLabel])
+            descriptionLabel.bottom == cardView.bottom - sidePadding
         }
     }
     
@@ -142,7 +145,7 @@ class VideoCell: UICollectionViewCell {
     ///   - thumbnailImage: thumbnail image of the video. If this is nil then
     func configure(title: String, presenterName: String, videoDescription: String, videoDuration: String, thumbnailImageURL url: URL?) {
         titleLabel.text = title
-        presenterNameLabel.text = presenterName
+        presenterNameLabel.text = presenterName.uppercased()
         descriptionLabel.text = videoDescription
         videoDurationOverlay.label.text = videoDuration
         videoDurationOverlay.isHidden = videoDuration.isEmpty

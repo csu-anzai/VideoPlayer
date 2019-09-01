@@ -27,6 +27,7 @@
 		603D9EED231B9BDB00240DD5 /* VideoPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9EEC231B9BDB00240DD5 /* VideoPlayerViewModel.swift */; };
 		603D9EEF231B9E3F00240DD5 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9EEE231B9E3F00240DD5 /* VideoPlayerViewController.swift */; };
 		603D9EF1231BBF3000240DD5 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9EF0231BBF3000240DD5 /* NavigationController.swift */; };
+		603D9EF3231BED6500240DD5 /* RoundedDropShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9EF2231BED6500240DD5 /* RoundedDropShadowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		603D9EEC231B9BDB00240DD5 /* VideoPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewModel.swift; sourceTree = "<group>"; };
 		603D9EEE231B9E3F00240DD5 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		603D9EF0231BBF3000240DD5 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		603D9EF2231BED6500240DD5 /* RoundedDropShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedDropShadowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				603D9ECA231A62CA00240DD5 /* VideoCell.swift */,
+				603D9EF2231BED6500240DD5 /* RoundedDropShadowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				603D9EE9231AD2DC00240DD5 /* TopAlignedCollectionViewFlowLayout.swift in Sources */,
 				603D9EEF231B9E3F00240DD5 /* VideoPlayerViewController.swift in Sources */,
 				602B84D72316867100B36FBF /* AppDelegate.swift in Sources */,
+				603D9EF3231BED6500240DD5 /* RoundedDropShadowView.swift in Sources */,
 				603D9EC4231A4B1800240DD5 /* URLRequest+Additions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
