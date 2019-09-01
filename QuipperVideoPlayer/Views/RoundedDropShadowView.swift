@@ -72,8 +72,7 @@ class RoundedDropShadowView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        maskLayer.path = CGPath(roundedRect: bounds,
-                                cornerWidth: cornerRadius, cornerHeight: cornerRadius, transform: nil)
+        maskLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).cgPath
         shadowLayer.path = maskLayer.path
     }
     
