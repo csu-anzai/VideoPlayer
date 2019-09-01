@@ -38,6 +38,17 @@ class VideoCell: UICollectionViewCell {
         return label
     }()
     
+    /// Video description label.
+    private let descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 15)
+        label.numberOfLines = 0
+        label.lineBreakMode = .byTruncatingTail
+        label.textColor = .secondaryTitleColor
+        label.accessibilityIdentifier = "Video description"
+        return label
+    }()
+    
     /// Video thumbnail image view.
     private let thumbnailImageView: UIImageView = {
         let imageView = UIImageView()
@@ -76,7 +87,7 @@ class VideoCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        configure(title: "", presenterName: "", videoDuration: "", thumbnailImageURL: nil)
+        configure(title: "", presenterName: "", videoDescription: "", videoDuration: "", thumbnailImageURL: nil)
     }
     
     private func commonInit() {
@@ -84,13 +95,14 @@ class VideoCell: UICollectionViewCell {
         contentView.addSubview(thumbnailImageView)
         contentView.addSubview(titleLabel)
         contentView.addSubview(presenterNameLabel)
+        contentView.addSubview(descriptionLabel)
         contentView.addSubview(videoDurationOverlay)
         setUpConstraints()
     }
     
     private func setUpConstraints() {
         // constraints
-        constrain(contentView, thumbnailImageView, titleLabel, presenterNameLabel, videoDurationOverlay) { (contentView, thumbnailImageView, titleLabel, presenterNameLabel, videoDurationOverlay) in
+        constrain(contentView, thumbnailImageView, titleLabel, presenterNameLabel, descriptionLabel, videoDurationOverlay) { (contentView, thumbnailImageView, titleLabel, presenterNameLabel, descriptionLabel, videoDurationOverlay) in
             // thumbnail
             thumbnailImageView.top == contentView.top
             thumbnailImageView.leading == contentView.leading
@@ -108,10 +120,13 @@ class VideoCell: UICollectionViewCell {
             titleLabel.trailing == contentView.trailing - sidePadding
             
             // presenter name
-            align(leading: titleLabel, presenterNameLabel)
-            align(trailing: titleLabel, presenterNameLabel)
+            align(leading: titleLabel, presenterNameLabel, descriptionLabel)
+            align(trailing: titleLabel, presenterNameLabel, descriptionLabel)
+            distribute(by: 4.0, vertically: [titleLabel, presenterNameLabel, descriptionLabel])
             presenterNameLabel.top == titleLabel.bottom + 4.0
-            presenterNameLabel.bottom == contentView.bottom - 8.0
+            
+            // video description
+            descriptionLabel.bottom == contentView.bottom - 8.0
         }
     }
     
@@ -125,9 +140,10 @@ class VideoCell: UICollectionViewCell {
     ///   - title: Title of the video.
     ///   - presenterName: Video presenter name.
     ///   - thumbnailImage: thumbnail image of the video. If this is nil then
-    func configure(title: String, presenterName: String, videoDuration: String, thumbnailImageURL url: URL?) {
+    func configure(title: String, presenterName: String, videoDescription: String, videoDuration: String, thumbnailImageURL url: URL?) {
         titleLabel.text = title
         presenterNameLabel.text = presenterName
+        descriptionLabel.text = videoDescription
         videoDurationOverlay.label.text = videoDuration
         videoDurationOverlay.isHidden = videoDuration.isEmpty
         thumbnailImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "nilImage")) // TODO: Add placeholder image.

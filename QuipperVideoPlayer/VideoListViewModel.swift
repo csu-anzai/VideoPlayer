@@ -57,6 +57,11 @@ class VideoListViewModel {
         return videoInfo.presenterName
     }
     
+    func videoDescription(at indexPath: IndexPath) -> String {
+        let videoInfo = videosInfo[indexPath.row]
+        return videoInfo.description
+    }
+    
     func videoDuration(at indexPath: IndexPath) -> String {
         let videoInfo = videosInfo[indexPath.row]
         return String.stringRepresentationOfDuration(milliseconds: videoInfo.videoDuration)

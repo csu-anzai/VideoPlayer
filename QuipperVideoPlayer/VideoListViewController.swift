@@ -80,7 +80,8 @@ extension VideoListViewController: UICollectionViewDataSource {
         let presenterName = viewModel.videoPresenterName(at: indexPath)
         let url = viewModel.videoThumbnailURL(at: indexPath)
         let duration = viewModel.videoDuration(at: indexPath)
-        cell.configure(title: title, presenterName: presenterName, videoDuration: duration, thumbnailImageURL: url)
+        let description = viewModel.videoDescription(at: indexPath)
+        cell.configure(title: title, presenterName: presenterName, videoDescription: description, videoDuration: duration, thumbnailImageURL: url)
         
         return cell
     }
