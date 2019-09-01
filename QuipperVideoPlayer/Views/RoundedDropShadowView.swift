@@ -24,8 +24,8 @@ class RoundedDropShadowView: UIView {
     
     /// The blur radius (in points) used to render the layer’s shadow.
     ///
-    /// You specify the radius The default value of this property is 16.0.
-    var shadowRadius: CGFloat = 16.0 {
+    /// You specify the radius The default value of this property is 13.0.
+    var shadowRadius: CGFloat = 13.0 {
         didSet {
             shadowLayer.shadowRadius = shadowRadius
         }
@@ -33,8 +33,8 @@ class RoundedDropShadowView: UIView {
     
     /// The opacity of the layer’s shadow.
     ///
-    /// The value in this property must be in the range 0.0 (transparent) to 1.0 (opaque). The default value of this property is 0.3.
-    var shadowOpacity: Float = 0.3 {
+    /// The value in this property must be in the range 0.0 (transparent) to 1.0 (opaque). The default value of this property is 0.2.
+    var shadowOpacity: Float = 0.2 {
         didSet {
             shadowLayer.shadowOpacity = shadowOpacity
         }
