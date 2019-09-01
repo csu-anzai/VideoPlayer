@@ -110,6 +110,7 @@ class RoundedDropShadowView: UIView {
         }
         set {
             contentView.backgroundColor = newValue
+            shadowLayer.fillColor = newValue?.cgColor
         }
     }
     
