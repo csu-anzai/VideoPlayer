@@ -59,8 +59,9 @@ class VideoListViewModel {
     
     func videoDuration(at indexPath: IndexPath) -> String {
         let videoInfo = videosInfo[indexPath.row]
-        let minutes = videoInfo.videoDuration / 60
-        let seconds = Int(Double(videoInfo.videoDuration).remainder(dividingBy: 60.0))
+        let durationInSeconds = videoInfo.videoDuration/1000 // convert from ms to s
+        let minutes = durationInSeconds / 60
+        let seconds = Int(Double(durationInSeconds).truncatingRemainder(dividingBy: 60))
         return "\(minutes):\(seconds)"
     }
     
