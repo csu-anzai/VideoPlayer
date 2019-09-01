@@ -26,6 +26,7 @@
 		603D9EE9231AD2DC00240DD5 /* TopAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9EE8231AD2DC00240DD5 /* TopAlignedCollectionViewFlowLayout.swift */; };
 		603D9EED231B9BDB00240DD5 /* VideoPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9EEC231B9BDB00240DD5 /* VideoPlayerViewModel.swift */; };
 		603D9EEF231B9E3F00240DD5 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9EEE231B9E3F00240DD5 /* VideoPlayerViewController.swift */; };
+		603D9EF1231BBF3000240DD5 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9EF0231BBF3000240DD5 /* NavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		603D9EE8231AD2DC00240DD5 /* TopAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		603D9EEC231B9BDB00240DD5 /* VideoPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewModel.swift; sourceTree = "<group>"; };
 		603D9EEE231B9E3F00240DD5 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
+		603D9EF0231BBF3000240DD5 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			children = (
 				602B84D62316867100B36FBF /* AppDelegate.swift */,
 				603D9ED6231A973500240DD5 /* Coordinator.swift */,
+				603D9EF0231BBF3000240DD5 /* NavigationController.swift */,
 				602B84D82316867100B36FBF /* VideoListViewController.swift */,
 				603D9EE1231AC91100240DD5 /* VideoListViewModel.swift */,
 				603D9EEC231B9BDB00240DD5 /* VideoPlayerViewModel.swift */,
@@ -267,6 +270,7 @@
 				603D9EDE231AC5F700240DD5 /* QuipperService.swift in Sources */,
 				603D9EED231B9BDB00240DD5 /* VideoPlayerViewModel.swift in Sources */,
 				603D9EC5231A4B1800240DD5 /* URLSessionProvider.swift in Sources */,
+				603D9EF1231BBF3000240DD5 /* NavigationController.swift in Sources */,
 				602B84D92316867100B36FBF /* VideoListViewController.swift in Sources */,
 				603D9EC8231A4D4100240DD5 /* VideoInfo.swift in Sources */,
 				603D9EE9231AD2DC00240DD5 /* TopAlignedCollectionViewFlowLayout.swift in Sources */,
