@@ -62,7 +62,8 @@ class VideoListViewModel {
         let durationInSeconds = videoInfo.videoDuration/1000 // convert from ms to s
         let minutes = durationInSeconds / 60
         let seconds = Int(Double(durationInSeconds).truncatingRemainder(dividingBy: 60))
-        return "\(minutes):\(seconds)"
+        let twoDigitSecondsString: String = (seconds/10 == 0) ? "0\(seconds)" : "\(seconds)" // ensure seconds to have 2 digits
+        return "\(minutes):\(twoDigitSecondsString)"
     }
     
     func videoThumbnailURL(at indexPath: IndexPath) -> URL? {
