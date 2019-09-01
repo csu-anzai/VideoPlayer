@@ -110,6 +110,7 @@ class RoundedDropShadowView: UIView {
         }
         set {
             contentView.backgroundColor = newValue
+            // This is to ensure no black lines (or any other colored lines) are showing around the corner radius.
             shadowLayer.fillColor = newValue?.cgColor
         }
     }
