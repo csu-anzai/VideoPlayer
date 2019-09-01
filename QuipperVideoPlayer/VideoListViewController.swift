@@ -62,6 +62,10 @@ class VideoListViewController: UIViewController {
         collectionView.delegate = self
     }
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
 }
 
 //

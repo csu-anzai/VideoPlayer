@@ -21,8 +21,9 @@ final class Coordinator {
 
 extension Coordinator: VideoListViewControllerDelegate {
     func didSelect(_ videoInfo: VideoInfo, viewController: VideoListViewController) {
-        // TODO: Navigate to VideoPlayerVC
-        // 1. create VideoPlayerVC
-        // 2. transition to VideoPlayerVC from VideoListVC
+        // TODO: Add custom transition animation
+        let playerViewModel = VideoPlayerViewModel(videoInfo: videoInfo)
+        let vc = VideoPlayerViewController(viewModel: playerViewModel)
+        viewController.present(vc, animated: true, completion: nil)
     }
 }

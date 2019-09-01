@@ -24,6 +24,8 @@
 		603D9EE2231AC91100240DD5 /* VideoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9EE1231AC91100240DD5 /* VideoListViewModel.swift */; };
 		603D9EE6231ACF1A00240DD5 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 603D9EE5231ACF1A00240DD5 /* SDWebImage.framework */; };
 		603D9EE9231AD2DC00240DD5 /* TopAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9EE8231AD2DC00240DD5 /* TopAlignedCollectionViewFlowLayout.swift */; };
+		603D9EED231B9BDB00240DD5 /* VideoPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9EEC231B9BDB00240DD5 /* VideoPlayerViewModel.swift */; };
+		603D9EEF231B9E3F00240DD5 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9EEE231B9E3F00240DD5 /* VideoPlayerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		603D9EE1231AC91100240DD5 /* VideoListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoListViewModel.swift; sourceTree = "<group>"; };
 		603D9EE5231ACF1A00240DD5 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		603D9EE8231AD2DC00240DD5 /* TopAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		603D9EEC231B9BDB00240DD5 /* VideoPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewModel.swift; sourceTree = "<group>"; };
+		603D9EEE231B9E3F00240DD5 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,8 @@
 				603D9ED6231A973500240DD5 /* Coordinator.swift */,
 				602B84D82316867100B36FBF /* VideoListViewController.swift */,
 				603D9EE1231AC91100240DD5 /* VideoListViewModel.swift */,
+				603D9EEC231B9BDB00240DD5 /* VideoPlayerViewModel.swift */,
+				603D9EEE231B9E3F00240DD5 /* VideoPlayerViewController.swift */,
 				603D9EC9231A62B900240DD5 /* Views */,
 				603D9EE7231AD2DC00240DD5 /* Helpers */,
 				603D9EBF231A4B1800240DD5 /* Network Layer */,
@@ -259,10 +265,12 @@
 				603D9EE0231AC60F00240DD5 /* DataService.swift in Sources */,
 				603D9ECB231A62CA00240DD5 /* VideoCell.swift in Sources */,
 				603D9EDE231AC5F700240DD5 /* QuipperService.swift in Sources */,
+				603D9EED231B9BDB00240DD5 /* VideoPlayerViewModel.swift in Sources */,
 				603D9EC5231A4B1800240DD5 /* URLSessionProvider.swift in Sources */,
 				602B84D92316867100B36FBF /* VideoListViewController.swift in Sources */,
 				603D9EC8231A4D4100240DD5 /* VideoInfo.swift in Sources */,
 				603D9EE9231AD2DC00240DD5 /* TopAlignedCollectionViewFlowLayout.swift in Sources */,
+				603D9EEF231B9E3F00240DD5 /* VideoPlayerViewController.swift in Sources */,
 				602B84D72316867100B36FBF /* AppDelegate.swift in Sources */,
 				603D9EC4231A4B1800240DD5 /* URLRequest+Additions.swift in Sources */,
 			);
