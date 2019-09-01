@@ -57,11 +57,14 @@ class VideoListViewModel {
         return videoInfo.presenterName
     }
     
+    func videoDescription(at indexPath: IndexPath) -> String {
+        let videoInfo = videosInfo[indexPath.row]
+        return videoInfo.description
+    }
+    
     func videoDuration(at indexPath: IndexPath) -> String {
         let videoInfo = videosInfo[indexPath.row]
-        let minutes = videoInfo.videoDuration / 60
-        let seconds = Int(Double(videoInfo.videoDuration).remainder(dividingBy: 60.0))
-        return "\(minutes):\(seconds)"
+        return String.stringRepresentationOfDuration(milliseconds: videoInfo.videoDuration)
     }
     
     func videoThumbnailURL(at indexPath: IndexPath) -> URL? {
@@ -69,4 +72,34 @@ class VideoListViewModel {
         return videoInfo.thumbnailURL
     }
     
+}
+
+private extension String {
+    /// Converts a given duration into a string representation.
+    ///
+    /// For example:
+    ///
+    ///     let milliseconds = 104000
+    ///     print(String.stringRepresentationOfDuration(milliseconds: milliseconds))
+    ///     // Output: 1:44
+    /// - Parameter milliseconds: The duration to be converted in milliseconds.
+    /// - Returns: The string representation of the given duration.
+    static func stringRepresentationOfDuration(milliseconds: Int) -> String {
+        let minutes = milliseconds/1000/60
+        let seconds = Int(Double(milliseconds/1000).truncatingRemainder(dividingBy: 60))
+        let twoDigitSecondsString: String = twoDigitRepresentation(number: seconds)
+        return "\(minutes):\(twoDigitSecondsString)"
+    }
+    
+    private static func twoDigitRepresentation(number: Int) -> String {
+        if isSingleDigit(number: number) {
+            return "0\(number)"
+        } else {
+            return "\(number)"
+        }
+    }
+    
+    private static func isSingleDigit(number: Int) -> Bool {
+        return number/10 == 0
+    }
 }

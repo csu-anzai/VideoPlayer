@@ -79,7 +79,9 @@ extension VideoListViewController: UICollectionViewDataSource {
         let title = viewModel.videoTitle(at: indexPath)
         let presenterName = viewModel.videoPresenterName(at: indexPath)
         let url = viewModel.videoThumbnailURL(at: indexPath)
-        cell.configure(title: title, presenterName: presenterName, thumbnailImageURL: url)
+        let duration = viewModel.videoDuration(at: indexPath)
+        let description = viewModel.videoDescription(at: indexPath)
+        cell.configure(title: title, presenterName: presenterName, videoDescription: description, videoDuration: duration, thumbnailImageURL: url)
         
         return cell
     }
