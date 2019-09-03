@@ -53,6 +53,7 @@ class VideoListViewController: UIViewController {
         // view setup
         view.addSubview(collectionView)
         collectionView.backgroundColor = .white
+        collectionView.delaysContentTouches = false // cancel delay for better card press animation
         // register cells
         collectionView.register(VideoCell.self, forCellWithReuseIdentifier: String(describing: VideoCell.self))
         // constraints
