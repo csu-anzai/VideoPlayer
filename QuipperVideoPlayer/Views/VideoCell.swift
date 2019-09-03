@@ -50,7 +50,7 @@ class VideoCell: UICollectionViewCell {
     }()
     
     /// Video thumbnail image view.
-    private let thumbnailImageView: UIImageView = {
+    let thumbnailImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
@@ -73,7 +73,7 @@ class VideoCell: UICollectionViewCell {
     }()
     
     /// The main view containing all subviews of the cell.
-    private let cardView = RoundedDropShadowView()
+    let cardView = RoundedDropShadowView()
     
     //
     // MARK: Lifecycle

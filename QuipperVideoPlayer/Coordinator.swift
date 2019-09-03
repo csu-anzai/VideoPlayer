@@ -24,6 +24,7 @@ extension Coordinator: VideoListViewControllerDelegate {
         // TODO: Add custom transition animation
         let playerViewModel = VideoPlayerViewModel(videoInfo: videoInfo)
         let videoPlayerVC = VideoPlayerViewController(viewModel: playerViewModel)
+        videoPlayerVC.transitioningDelegate = videoListVC
         videoListVC.present(videoPlayerVC, animated: true, completion: nil)
     }
 }

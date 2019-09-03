@@ -32,7 +32,7 @@ class VideoListViewController: UIViewController {
         return viewModel
     }()
     
-    private lazy var collectionView: UICollectionView = {
+    private(set) lazy var collectionView: UICollectionView = {
         let flowLayout = TopAlignedCollectionViewFlowLayout()
         // ensure self sizing cells
         flowLayout.estimatedItemSize = CGSize(width: view.bounds.width, height: 100)
