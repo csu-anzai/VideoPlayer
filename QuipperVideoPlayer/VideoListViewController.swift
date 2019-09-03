@@ -32,7 +32,7 @@ class VideoListViewController: UIViewController {
         return viewModel
     }()
     
-    private lazy var collectionView: UICollectionView = {
+    private(set) lazy var collectionView: UICollectionView = {
         let flowLayout = TopAlignedCollectionViewFlowLayout()
         // ensure self sizing cells
         flowLayout.estimatedItemSize = CGSize(width: view.bounds.width, height: 100)
@@ -53,6 +53,7 @@ class VideoListViewController: UIViewController {
         // view setup
         view.addSubview(collectionView)
         collectionView.backgroundColor = .white
+        collectionView.delaysContentTouches = false // cancel delay for better card press animation
         // register cells
         collectionView.register(VideoCell.self, forCellWithReuseIdentifier: String(describing: VideoCell.self))
         // constraints

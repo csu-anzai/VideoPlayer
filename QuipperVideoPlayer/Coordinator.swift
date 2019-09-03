@@ -20,10 +20,11 @@ final class Coordinator {
 }
 
 extension Coordinator: VideoListViewControllerDelegate {
-    func didSelect(_ videoInfo: VideoInfo, viewController: VideoListViewController) {
+    func didSelect(_ videoInfo: VideoInfo, viewController videoListVC: VideoListViewController) {
         // TODO: Add custom transition animation
         let playerViewModel = VideoPlayerViewModel(videoInfo: videoInfo)
-        let vc = VideoPlayerViewController(viewModel: playerViewModel)
-        viewController.present(vc, animated: true, completion: nil)
+        let videoPlayerVC = VideoPlayerViewController(viewModel: playerViewModel)
+        videoPlayerVC.transitioningDelegate = videoListVC
+        videoListVC.present(videoPlayerVC, animated: true, completion: nil)
     }
 }

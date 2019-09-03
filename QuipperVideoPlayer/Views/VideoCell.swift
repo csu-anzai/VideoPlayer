@@ -50,7 +50,7 @@ class VideoCell: UICollectionViewCell {
     }()
     
     /// Video thumbnail image view.
-    private let thumbnailImageView: UIImageView = {
+    let thumbnailImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
@@ -73,7 +73,7 @@ class VideoCell: UICollectionViewCell {
     }()
     
     /// The main view containing all subviews of the cell.
-    private let cardView = RoundedDropShadowView()
+    let cardView = RoundedDropShadowView()
     
     //
     // MARK: Lifecycle
@@ -166,6 +166,33 @@ class VideoCell: UICollectionViewCell {
                                                                withHorizontalFittingPriority: .required,
                                                                verticalFittingPriority: .defaultLow)
         return layoutAttributes
+    }
+    
+    //
+    // MARK: Animate press
+    //
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        animatePress(isPressing: true)
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        animatePress(isPressing: false)
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(touches, with: event)
+        animatePress(isPressing: false)
+    }
+    
+    private func animatePress(isPressing: Bool) {
+        UIView.animate(withDuration: 0.8, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: [.beginFromCurrentState, .curveEaseIn, .allowUserInteraction], animations: {
+            self.cardView.transform = isPressing ? CGAffineTransform(scaleX: 0.96, y: 0.96) : .identity
+        }) { (success) in
+            
+        }
     }
     
 }

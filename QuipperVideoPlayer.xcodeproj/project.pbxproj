@@ -28,6 +28,7 @@
 		603D9EEF231B9E3F00240DD5 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9EEE231B9E3F00240DD5 /* VideoPlayerViewController.swift */; };
 		603D9EF1231BBF3000240DD5 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9EF0231BBF3000240DD5 /* NavigationController.swift */; };
 		603D9EF3231BED6500240DD5 /* RoundedDropShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D9EF2231BED6500240DD5 /* RoundedDropShadowView.swift */; };
+		60993990231E391C00CE672D /* VideoListToPlayerTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6099398F231E391C00CE672D /* VideoListToPlayerTransitionAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		603D9EEE231B9E3F00240DD5 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		603D9EF0231BBF3000240DD5 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		603D9EF2231BED6500240DD5 /* RoundedDropShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedDropShadowView.swift; sourceTree = "<group>"; };
+		6099398F231E391C00CE672D /* VideoListToPlayerTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListToPlayerTransitionAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				603D9EE1231AC91100240DD5 /* VideoListViewModel.swift */,
 				603D9EEC231B9BDB00240DD5 /* VideoPlayerViewModel.swift */,
 				603D9EEE231B9E3F00240DD5 /* VideoPlayerViewController.swift */,
+				60993991231E633300CE672D /* TransitionAnimators */,
 				603D9EC9231A62B900240DD5 /* Views */,
 				603D9EE7231AD2DC00240DD5 /* Helpers */,
 				603D9EBF231A4B1800240DD5 /* Network Layer */,
@@ -168,6 +171,14 @@
 				603D9EE8231AD2DC00240DD5 /* TopAlignedCollectionViewFlowLayout.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		60993991231E633300CE672D /* TransitionAnimators */ = {
+			isa = PBXGroup;
+			children = (
+				6099398F231E391C00CE672D /* VideoListToPlayerTransitionAnimator.swift */,
+			);
+			path = TransitionAnimators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +280,7 @@
 				603D9EE2231AC91100240DD5 /* VideoListViewModel.swift in Sources */,
 				603D9ED7231A973500240DD5 /* Coordinator.swift in Sources */,
 				603D9EE0231AC60F00240DD5 /* DataService.swift in Sources */,
+				60993990231E391C00CE672D /* VideoListToPlayerTransitionAnimator.swift in Sources */,
 				603D9ECB231A62CA00240DD5 /* VideoCell.swift in Sources */,
 				603D9EDE231AC5F700240DD5 /* QuipperService.swift in Sources */,
 				603D9EED231B9BDB00240DD5 /* VideoPlayerViewModel.swift in Sources */,
