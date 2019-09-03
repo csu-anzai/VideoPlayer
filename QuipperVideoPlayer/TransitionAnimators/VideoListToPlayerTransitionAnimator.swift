@@ -97,7 +97,11 @@ extension VideoListToPlayerTransitionAnimator: UIViewControllerAnimatedTransitio
 extension VideoListViewController: UIViewControllerTransitioningDelegate {
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return VideoListToPlayerTransitionAnimator(animationType: .present)
+        if #available(iOS 12.0, *) {
+            return VideoListToPlayerTransitionAnimator(animationType: .present)
+        } else {
+            return nil
+        }
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
