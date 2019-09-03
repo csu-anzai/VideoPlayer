@@ -38,11 +38,7 @@ class VideoListToPlayerTransitionAnimator: NSObject, UIViewControllerAnimatedTra
         let yDiff = toView.center.y - dummyView.center.y
         toView.alpha = 0.0
         // hide original view
-        let hideOriginalView = UIView(frame: dummyView.frame) // to hide the original view while animating
-        hideOriginalView.backgroundColor = parameters.bgColor
-        hideOriginalView.layer.cornerRadius = dummyView.layer.cornerRadius // TODO: Refactor to not have to worry about setting this here!
-        hideOriginalView.layer.maskedCorners = dummyView.layer.maskedCorners
-        hideOriginalView.clipsToBounds = true
+        let hideOriginalView = parameters.hideOriginalView
         // dummy background
         let bgView = UIView(frame: toView.bounds)
         bgView.backgroundColor = .black
@@ -83,7 +79,7 @@ extension VideoListViewController: UIViewControllerTransitioningDelegate {
     
     /// Get the dummy view to use in transition animation between VideoListViewController → VideoPlayerViewController
     /// - Parameter containingView: The view that will contain the dummyView. We adjust the dummy view's frame to the new coordinates.
-    func getTransitionParameters(containingView: UIView) -> (dummyView: UIView, bgColor: UIColor)? {
+    func getTransitionParameters(containingView: UIView) -> (dummyView: UIView, hideOriginalView: UIView)? {
         guard let indexPath = collectionView.indexPathsForSelectedItems?.first,
             let cell = collectionView.cellForItem(at: indexPath) as? VideoCell,
             let dummyView = cell.thumbnailImageView.snapshotView(afterScreenUpdates: false) else {
@@ -93,8 +89,13 @@ extension VideoListViewController: UIViewControllerTransitioningDelegate {
         dummyView.layer.cornerRadius = cell.cardView.cornerRadius
         dummyView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         dummyView.clipsToBounds = true
-        let color: UIColor = cell.backgroundColor ?? view.backgroundColor ?? .black
-        return (dummyView, color)
+        
+        let hideOriginalView = UIView(frame: dummyView.frame)
+        hideOriginalView.backgroundColor = cell.cardView.backgroundColor
+        hideOriginalView.layer.cornerRadius = dummyView.layer.cornerRadius
+        hideOriginalView.layer.maskedCorners = dummyView.layer.maskedCorners
+        hideOriginalView.clipsToBounds = true
+        return (dummyView, hideOriginalView)
     }
     
 }
