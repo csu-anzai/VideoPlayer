@@ -28,7 +28,7 @@ class VideoListToPlayerTransitionAnimator: NSObject, UIViewControllerAnimatedTra
             let nav = transitionContext.viewController(forKey: .from) as? UINavigationController,
             let vc = nav.topViewController as? VideoListViewController,
             let parameters = vc.getTransitionParameters(containingView: container) else {
-                transitionContext.completeTransition(true)
+                transitionContext.completeTransition(false)
                 return
         }
         
