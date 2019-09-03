@@ -10,6 +10,8 @@ import UIKit
 
 class VideoListToPlayerTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
+    // TODO: Fix animation when video is selected in landscape mode.
+    
     // TODO: Fix animation in case of slow internet connection
     // Make it so that the dummyView will stay up there until the video is loaded.
     // Also, add some indicator from video loading.
